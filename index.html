@@ -411,18 +411,21 @@
 <script type="text/javascript">
     (function(){
       emailjs.init({
-        publicKey: "tBmlrGRUbSOMcfzGy",
+        publicKey: "_T-G0Qhvw5ZD1nnQC",
       });
    })();
    document.getElementById('sendEmail').addEventListener('click',(e)=>{
     let toEmail=document.getElementById('email').value;
     let phone = document.getElementById('phone').value;
+    let name=document.getElementById('name').value;
     let message = document.getElementById('message').value;
     var templateParams = {
-  name: toEmail,
-  notes: message
+  name: name,
+  notes: message,
+  to_email:toEmail,
+  phone:phone
 };
-    emailjs.send('service_ft7y2dt', 'template_hsbcbp8', templateParams).then(
+    emailjs.send('service_falxi1y', 'template_kbgdhel', templateParams).then(
   (response) => {
     console.log('SUCCESS!', response.status, response.text);
   },
